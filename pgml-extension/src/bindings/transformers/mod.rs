@@ -16,7 +16,7 @@ use super::TracebackError;
 
 pub mod whitelist;
 
-static PY_MODULE: Lazy<Py<PyModule>> = Lazy::new(|| {
+pub static PY_MODULE: Lazy<Py<PyModule>> = Lazy::new(|| {
     Python::with_gil(|py| -> Py<PyModule> {
         let src = include_str!(concat!(
             env!("CARGO_MANIFEST_DIR"),
